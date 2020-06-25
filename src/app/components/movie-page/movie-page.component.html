@@ -1,0 +1,23 @@
+
+<div class="movie" >
+    <div *ngIf="isLoading">
+        <h3>Loading...</h3>
+    </div>
+     <ng-container *ngIf="movie">
+        <div class="movie__detail movie-detail">
+            <button class="btn-back" (click)="goHome()">&#8592; Back</button>
+            <h2>{{movie.title}} ({{movie.release_date}})</h2>
+                <span class="movie__genre" *ngFor='let genre of movie.genres'>
+                    {{genre.name}}
+                </span>
+            <h3>Overview</h3>
+            <p>{{movie.overview}}</p>
+    
+           <iframe *ngIf='video'  [src]="videoUrl" frameborder="0"></iframe>
+        </div>
+        <img class="movie__img" [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" />
+     </ng-container>
+
+</div>
+
+

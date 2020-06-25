@@ -1,0 +1,10 @@
+<section class="top-movie-section">
+    <div class="container">
+      <div class="subheading">Top rated movies</div>
+      <div class='top-movie-list'>
+        <div (click)="onSelect(movie)" *ngFor="let movie of movies | slice:0:6" class="top-movie-list__item">
+          <img [src]="'https://image.tmdb.org/t/p/w154' + movie.poster_path" />
+        </div>
+      </div>
+    </div>
+</section>
